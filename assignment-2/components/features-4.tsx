@@ -9,17 +9,17 @@ import {
 
 export default function Features() {
   return (
-    <section className="py-12 md:py-20" id="Features">
+    <section className="py-12 md:py-20 " id="Features">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-          <h2 className="text-balance text-4xl font-medium lg:text-5xl">
+        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12 ">
+          <h2 className="text-balance text-4xl font-medium lg:text-5xl ">
             Pure Logic. Clear Summaries. No AI Hype.
           </h2>
-          <p>Scrape, Summarize, Store — all in your control.</p>
+          <p className="font-medium">Scrape, Summarize, Store — all in your control.</p>
         </div>
 
-        <div className="relative mx-auto grid max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="space-y-3">
+        <div className="bg-indigo-200 relative mx-auto grid max-w-4xl divide-x divide-y border-2 *:p-12 sm:grid-cols-2 lg:grid-cols-3 ">
+          <div className="space-y-3 border-2">
             <div className="flex items-center gap-2">
               <Zap className="size-4" />
               <h3 className="text-sm font-medium">
@@ -31,7 +31,7 @@ export default function Features() {
               focused summaries in seconds.
             </p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 border-2">
             <div className="flex items-center gap-2">
               <Cpu className="size-4" />
               <h3 className="text-sm font-medium">No LLM Dependencies</h3>
@@ -40,8 +40,8 @@ export default function Features() {
               {`Forget token limits or API calls. There’s no ChatGPT, Claude, or Bard under the hood — just raw code and reasoning.`}
             </p>
           </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
+          <div className="space-y-2 border-2">
+            <div className="flex items-center gap-2 ">
               <Fingerprint className="size-4" />
 
               <h3 className="text-sm font-medium">Privacy-First Storage</h3>
@@ -51,7 +51,7 @@ export default function Features() {
               access them. No third-party snooping.
             </p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 border-2">
             <div className="flex items-center gap-2">
               <Pencil className="size-4" />
 
@@ -62,7 +62,7 @@ export default function Features() {
               integrate, or fork for your own use cases.
             </p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 border-2">
             <div className="flex items-center gap-2">
               <Settings2 className="size-4" />
 
@@ -75,7 +75,7 @@ export default function Features() {
               focused summaries in seconds.
             </p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 border-2">
             <div className="flex items-center gap-2">
               <Sparkles className="size-4" />
 

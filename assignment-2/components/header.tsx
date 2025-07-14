@@ -4,11 +4,18 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { RainbowButton } from "./magicui/rainbow-button";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const menuItems = [
   { name: "Summarize Now", href: "/summary" },
-  { name: "Features", href: "#Features" },
-  { name: "Testimonials", href: "#Testimonials" },
+  { name: "Features", href: "/#Features" },
+  { name: "Testimonials", href: "/#Testimonials" },
   { name: "About", href: "/about" },
 ];
 
@@ -20,15 +27,17 @@ export const HeroHeader = () => {
         data-state={menuState && "active"}
         className=" fixed z-20 w-full border-b backdrop-blur-3xl"
       >
-        <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
+        <div className="mx-auto max-w-6xl px-3 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link
                 href="/"
                 aria-label="home"
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-2 "
               >
-                <span className="text-xl font-semibold">✒️ Blog Focus</span>
+                <span className="text-xl font-bold">
+                  ✒️ <span className="text-indigo-400">Blog</span> Focus
+                </span>
               </Link>
 
               <button
@@ -41,17 +50,30 @@ export const HeroHeader = () => {
               </button>
 
               <div className="hidden lg:block">
-                <ul className="flex gap-8 text-sm">
+                <ul className="flex gap-4 text-sm">
                   {menuItems.map((item, index) => (
                     <li key={index}>
-                      <Link
-                        href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                      >
-                        <span>{item.name}</span>
-                      </Link>
+                      <Button variant="ghost" asChild>
+                        <Link
+                          href={item.href}
+                          className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                          aria-label="Link"
+                        >
+                          <span>{item.name}</span>
+                        </Link>
+                      </Button>
                     </li>
                   ))}
+                  
+                  <li>
+                    <SignedIn>
+                      <Button variant="ghost" asChild>
+                      <Link className="text-muted-foreground hover:text-accent-foreground block duration-150" href="/savedBlogs">
+                        <span>Saved Blogs</span>
+                      </Link>
+                      </Button>
+                    </SignedIn>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -72,18 +94,24 @@ export const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button asChild variant="outline" size="sm">
-                  <Link href="#">
-                    <span>Login</span>
-                  </Link>
-                </Button>
-                <Button asChild size="sm">
-                  <Link href="#">
-                    <span>Sign Up</span>
-                  </Link>
-                </Button>
-                <RainbowButton asChild variant="outline">
-                  <Link href="https://github.com/arham2003" target="_blank">
+                <SignedOut>
+                  <SignInButton>
+                    <Button>Sign In</Button>
+                  </SignInButton>
+                  <SignUpButton>
+                    <Button>Sign Up</Button>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <Button asChild size="sm">
+                    <UserButton />
+                  </Button>
+                </SignedIn>
+                <RainbowButton variant="default" className="rounded-full">
+                  <Link
+                    href="https://github.com/arham2003/Nexium_Arham_Assign2"
+                    target="_blank"
+                  >
                     ⭐ Star on GitHub
                   </Link>
                 </RainbowButton>

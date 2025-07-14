@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+html {
+  scroll-behavior: smooth;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,6 +47,11 @@
 }
 
 :root {
+  --color-1: #ff6ec4;
+  --color-2: #7873f5;
+  --color-3: #4ade80;
+  --color-4: #fbbf24;
+  --color-5: #f472b6;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -119,4 +127,18 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+@keyframes rainbow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-rainbow {
+  animation: rainbow 4s ease infinite;
+  background-size: 300% 300%;
 }

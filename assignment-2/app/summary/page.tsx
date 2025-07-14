@@ -1,21 +1,21 @@
-"use client";
-import { useState } from "react";
-import SearchBar from "@/components/general/searchBar";
-import { TextareaWithText } from "@/components/general/TextArea";
+// app/summary/page.tsx
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { checkUser } from "@/lib/CheckUser";
+import UserStatus from "@/components/general/UserStatus";
 
-export default function generateSummary() {
-  const [isUrlFocused, setIsUrlFocused] = useState(false);
+export default async function SummaryPage() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    // Instead of redirecting back to /summary, redirect to homepage
+    return redirect("/");
+  }
+  await checkUser();
+
   return (
-    <div className="p-6 mx-auto max-w-xl py-20">
-      <SearchBar setIsUrlFocused={setIsUrlFocused} />
-      {!isUrlFocused && (
-        <>
-          <h2 className="text-xl font-semibold items-center mt-4 mb-2 text-center">
-            OR
-          </h2>
-          <TextareaWithText />
-        </>
-      )}
+    <div className="w-full max-w-7xl mx-auto px-4 py-20">
+      <UserStatus />
     </div>
   );
 }

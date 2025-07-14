@@ -2,7 +2,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/lib/data";
-import { Particles } from "@/components/magicui/particles";
+import { ResumeCard } from "@/components/ResumeCard";
 
 const BLUR_FADE_DELAY = 0.1;
 
@@ -14,7 +14,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10 px-4 sm:px-8 py-30">
-      <Particles className="absolute inset-0 -z-10" />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="flex justify-between gap-4">
@@ -54,6 +53,29 @@ export default function AboutPage() {
               </BlurFade>
             ))}
           </div>
+        </div>
+      </section>
+      <section id="education">
+        <div className="flex flex-col gap-y-3 max-w-2xl mx-auto">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period={`${education.start} - ${education.end}`}
+              />
+            </BlurFade>
+          ))}
         </div>
       </section>
     </main>

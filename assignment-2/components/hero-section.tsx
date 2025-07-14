@@ -3,7 +3,6 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { HeroHeader } from "./header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
@@ -31,7 +30,7 @@ export default function HeroSection() {
                   No LLMs. No black boxes. Just smart JavaScript.
                 </p>
 
-                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+                <div className="mt-6 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                   <InteractiveHoverButton>
                     <Link href="/summary">Start Summarizing</Link>
                   </InteractiveHoverButton>
@@ -49,22 +48,23 @@ export default function HeroSection() {
                 </div>
               </div>
               <Image
-                className="z-0 order-first ml-auto h-56 w-full object-cover invert sm:h-85 lg:absolute lg:inset-0 lg:-right-20 lg:-top-70 lg:order-last lg:h-max lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                className="z-0 order-first ml-auto h-60 w-full object-cover invert sm:h-85 lg:absolute lg:inset-0 lg:-right-20 lg:-top-70 lg:order-last lg:h-max lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                 src="/images/organic-objects.png"
                 alt="Abstract Object"
                 height="4000"
                 width="3000"
+                priority
               />
             </div>
           </div>
         </section>
-        <section className=" pb-16 md:pb-32">
+        <section className="pb-16 md:pb-32">
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
                 <p className="text-end text-sm">Powering the best teams</p>
               </div>
-              <div className="relative py-6 md:w-[calc(100%-11rem)]">
+              <div className="relative py-3 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
                   <div className="flex">
                     <img

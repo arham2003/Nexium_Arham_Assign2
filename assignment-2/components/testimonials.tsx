@@ -120,7 +120,7 @@ export default function WallOfLoveSection() {
             <h2 className="text-title text-3xl font-semibold">
               Loved by the Community
             </h2>
-            <p className="text-body mt-6">
+            <p className="text-body mt-6 font-medium">
               Real opinions from those who use logic-powered summaries daily — no black boxes, just clarity.
             </p>
           </div>

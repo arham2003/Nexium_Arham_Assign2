@@ -2,7 +2,11 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import FooterSection from "@/components/footer";
 import { HeroHeader } from "@/components/header";
-import { Meteors } from "@/components/magicui/meteors";
+import { GridPattern } from "@/components/magicui/grid-pattern";
+import { cn } from "@/lib/utils";
+import ParticlesWrapper from "@/components/general/ParticleWrapper";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "react-hot-toast";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -10,9 +14,9 @@ const font = Poppins({
 });
 
 export const metadata = {
-  title: "Blog Focus | Pure Logic Summaries",
+  title: "Home | Summarize Blogs Instantly",
   description:
-    "Summarize blog articles with precision using pure JavaScript logic. No AI giants, no black boxes—just fast, transparent summaries that work in your browser.",
+    "Paste any blog URL and get a smart, logic-based summary in seconds. Built with Puppeteer, not AI giants.",
   keywords: [
     "blog summarizer",
     "static summarization",
@@ -22,23 +26,42 @@ export const metadata = {
     "no AI blog summary",
   ],
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${font.className}`}>
-        <div className="relative min-h-screen w-full overflow-hidden">
-          <Meteors number={40} />
-
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${font.className} min-h-screen flex flex-col relative`}
+        >
           <HeroHeader />
-          {children}
+
+          {/* 🎇 Full-page flicker */}
+          <div className="fixed inset-0 -z-10 overflow-hidden w-full items-center justify-center rounded-lg border bg-background opacity-50">
+            <GridPattern
+              squares={[
+                [4, 4],
+                [5, 1],
+                [8, 2],
+                [5, 3],
+                [5, 5],
+                [10, 10],
+                [12, 15],
+                [15, 10],
+                [10, 15],
+              ]}
+              className={cn("inset-x-0 inset-y-[-30%] h-[200%] skew-y-12")}
+            />
+          </div>
+          <ParticlesWrapper />
+          <main className="flex-1 relative">{children}</main>
           <FooterSection />
-        </div>
-      </body>
-    </html>
+          <Toaster />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
