@@ -14,14 +14,14 @@ const testimonials: Testimonial[] = [
     role: "Software Engineer",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
     quote:
-      "Tailus is really extraordinary and very practical, no need to break your head. A real gold mine.",
+      "Blog Focus is really extraordinary and very practical, no need to break your head. A real gold mine.",
   },
   {
     name: "Yves Kalume",
     role: "GDE - Android",
     image: "https://randomuser.me/api/portraits/men/6.jpg",
     quote:
-      "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to Tailus.",
+      "With no experience in Blogging I just summarized my entire website in a few minutes with BlogFocus thanks to Tailus.",
   },
   {
     name: "Yucel Faruksahan",
@@ -42,56 +42,56 @@ const testimonials: Testimonial[] = [
     role: "Senior Software Engineer",
     image: "https://randomuser.me/api/portraits/men/4.jpg",
     quote:
-      "Tailus is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it. I can only recommend this incredible wonder.",
+      "Blog Focus is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it. I can only recommend this incredible wonder.",
   },
   {
     name: "Oketa Fred",
     role: "Fullstack Developer",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
     quote:
-      "I absolutely love Tailus! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze.",
+      "I absolutely love Blog Focus! The component blocks are beautifully designed and easy to use, which makes summarizing a great-looking blog a breeze.",
   },
   {
     name: "Zeki",
     role: "Founder of ChatExtend",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
     quote:
-      "Using TailsUI has been like unlocking a secret design superpower. It's the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly.",
+      "Using BlogFocus has been like unlocking a secret design superpower. It's the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly.",
   },
   {
     name: "Joseph Kitheka",
     role: "Fullstack Developer",
     image: "https://randomuser.me/api/portraits/men/9.jpg",
     quote:
-      "Tailus has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow. The flexibility to customize every aspect allows me to create unique user experiences. Tailus is a game-changer for modern web development!",
+      "BlogFocus has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow. The flexibility to customize every aspect allows me to create unique user experiences. BlogFocus is a game-changer for modern web development!",
   },
   {
     name: "Khatab Wedaa",
     role: "MerakiUI Creator",
     image: "https://randomuser.me/api/portraits/men/10.jpg",
     quote:
-      "Tailus is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project.",
+      "BlogFocus is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project.",
   },
   {
     name: "Rodrigo Aguilar",
     role: "TailwindAwesome Creator",
     image: "https://randomuser.me/api/portraits/men/11.jpg",
     quote:
-      "I love Tailus ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time.",
+      "I love BlogFocus ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time.",
   },
   {
     name: "Eric Ampire",
     role: "Mobile Engineer at @BRPNews • @GoogleDevExpert for Android",
     image: "https://randomuser.me/api/portraits/men/12.jpg",
     quote:
-      "Tailus templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience. The templates are easy to use, customizable, and responsive, and the support team is always available to help. I highly recommend Tailus templates to anyone who is looking to create a website.",
+      "BlogFocus Features are the perfect solution for anyone who wants to create a beautiful and functional summary of blogs without any blogging experience. The templates are easy to use, customizable, and responsive, and the support team is always available to help. I highly recommend BlogFocus templates to anyone who is looking to create a website.",
   },
   {
     name: "Roland Tubonge",
     role: "Software Engineer",
     image: "https://randomuser.me/api/portraits/men/13.jpg",
     quote:
-      "Tailus is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!",
+      "BlogFocus is so well designed that even with a very poor knowledge of Blogging you can do miracles. Let yourself be seduced!",
   },
 ];
 
@@ -121,7 +121,8 @@ export default function WallOfLoveSection() {
               Loved by the Community
             </h2>
             <p className="text-body mt-6 font-medium">
-              Real opinions from those who use logic-powered summaries daily — no black boxes, just clarity.
+              Real opinions from those who use logic-powered summaries daily —
+              no black boxes, just clarity.
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3">
