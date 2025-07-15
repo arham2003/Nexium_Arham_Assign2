@@ -29,13 +29,134 @@ Visit the live application: [arham-blogfocus.vercel.app](https://arham-blogfocus
 
 ```
 assignment-2/
-├── src/
-│   ├── app/                 # Next.js app directory
-│   ├── components/          # Reusable UI components
-│   ├── lib/                 # Utility functions and database
-│   └── types/               # TypeScript type definitions
-├── public/                  # Static assets
-└── package.json
+    ├── app/      # Next.js app directory
+        ├── about/
+            └── page.tsx
+        ├── api/
+            ├── saveBlog/
+                └── route.ts
+            └── scrape/
+                └── route.ts
+        ├── savedBlogs/
+            └── page.tsx
+        ├── summary/
+            ├── Loading.tsx
+            └── page.tsx
+        ├── favicon.ico
+        ├── globals.css
+        ├── layout.tsx
+        └── page.tsx
+    ├── components/     # Reusable UI components
+        ├── general/
+            ├── ParticleWrapper.tsx
+            ├── summarySection.tsx
+            ├── TextArea.tsx
+            └── UserStatus.tsx
+        ├── magicui/    # Magic UI Library Components
+            ├── blur-fade.tsx
+            ├── box-reveal.tsx
+            ├── grid-pattern.tsx
+            ├── interactive-grid-pattern.tsx
+            ├── interactive-hover-button.tsx
+            ├── meteors.tsx
+            ├── particles.tsx
+            ├── rainbow-button.tsx
+            └── text-animate.tsx
+        ├── ui/
+            ├── avatar.tsx
+            ├── badge.tsx
+            ├── button.tsx
+            ├── card.tsx
+            ├── infinite-slider.tsx
+            ├── input.tsx
+            ├── label.tsx
+            ├── popover.tsx
+            ├── progressive-blur.tsx
+            └── textarea.tsx
+        ├── BlogCard.tsx
+        ├── features-4.tsx
+        ├── footer.tsx
+        ├── header.tsx
+        ├── hero-section.tsx
+        ├── ResumeCard.tsx
+        └── testimonials.tsx
+    ├── lib/      # Utility functions and database files
+        ├── generated/
+            └── prisma/
+                ├── runtime/
+                    ├── edge-esm.js
+                    ├── edge.js
+                    ├── index-browser.d.ts
+                    ├── index-browser.js
+                    ├── library.d.ts
+                    ├── library.js
+                    ├── react-native.js
+                    ├── wasm-compiler-edge.js
+                    └── wasm-engine-edge.js
+                ├── client.d.ts
+                ├── client.js
+                ├── default.d.ts
+                ├── default.js
+                ├── edge.d.ts
+                ├── edge.js
+                ├── index-browser.js
+                ├── index.d.ts
+                ├── index.js
+                ├── package.json
+                ├── query_engine-windows.dll.node
+                ├── query_engine-windows.dll.node.tmp13372
+                ├── schema.prisma
+                ├── wasm.d.ts
+                └── wasm.js
+        ├── bigram_words.txt
+        ├── CheckUser.ts
+        ├── data.ts
+        ├── db.ts
+        ├── scrape.ts
+        ├── trigram_words.txt
+        ├── UrduWords.ts
+        ├── utils.ts
+        └── words.txt
+    ├── prisma/
+        ├── migrations/
+            ├── 20250713185434_user_summary_create/
+                └── migration.sql
+            ├── 20250714150741_remove_blogtext_unique/
+                └── migration.sql
+            └── migration_lock.toml
+        └── schema.prisma
+    ├── public/      # Static Assets
+        ├── images/
+            ├── arham-avatar.jpeg
+            ├── fast-university.png
+            ├── hero-unsplash.jpg
+            └── organic-objects.png
+        ├── file.svg
+        ├── globe.svg
+        ├── next.svg
+        └── window.svg
+    ├── utils/       # Some Utility functions for Summary Logic and Translation
+        ├── markdown.ts
+        ├── markdownToHtml.ts
+        ├── SummarizeLogic.tsx
+        ├── textTranslate.ts
+        └── validateEmail.ts
+    ├── .gitignore
+    ├── avatar.tsx
+    ├── card.tsx
+    ├── components.json
+    ├── eslint.config.mjs
+    ├── middleware.ts
+    ├── next.config.ts
+    ├── package-lock.json
+    ├── package.json
+    ├── pnpm-lock.yaml
+    ├── pnpm-workspace.yaml
+    ├── postcss.config.mjs
+    ├── README.md
+    └── tsconfig.json
+cz.json
+README.md
 ```
 
 ## 📦 Installation
