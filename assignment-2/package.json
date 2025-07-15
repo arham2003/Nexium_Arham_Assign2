@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate && playwright install"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.24.0",
@@ -17,6 +17,8 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-popover": "^1.1.14",
     "@radix-ui/react-slot": "^1.2.3",
+    "@sparticuz/chromium": "^138.0.1",
+    "@sparticuz/chromium-min": "^138.0.1",
     "aos": "^2.3.4",
     "cheerio": "^1.1.0",
     "class-variance-authority": "^0.7.1",
@@ -29,7 +31,8 @@
     "motion": "^12.23.3",
     "next": "15.3.5",
     "next-themes": "^0.4.6",
-    "playwright": "^1.54.1",
+    "playwright-core": "^1.54.1",
+    "puppeteer-core": "^24.13.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
