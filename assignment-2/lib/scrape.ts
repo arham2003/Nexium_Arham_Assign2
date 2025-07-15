@@ -1,7 +1,17 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "chrome-aws-lambda";
 
 export async function blogScraper(url: string) {
-  const browser = await puppeteer.launch({ headless: true });
+  const executablePath = await chromium.executablePath;
+
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: executablePath || "", // fallback if not found
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  });
+
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "domcontentloaded" });
 
@@ -25,6 +35,7 @@ export async function blogScraper(url: string) {
       const combinedText = Array.from(allParagraphs)
         .map((paragraph) => paragraph.innerText.trim())
         .join("\n\n");
+
       if (headingEl && combinedText) {
         results.push({
           heading: headingEl.innerText.trim(),
