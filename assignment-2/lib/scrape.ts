@@ -1,17 +1,7 @@
-import puppeteer from "puppeteer-core";
-import chromium from "chrome-aws-lambda";
+import { chromium } from "playwright";
 
 export async function blogScraper(url: string) {
-  const executablePath = await chromium.executablePath;
-
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: executablePath || "", // fallback if not found
-    headless: chromium.headless,
-    ignoreHTTPSErrors: true,
-  });
-
+  const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "domcontentloaded" });
 
